@@ -19,7 +19,7 @@ pipeline{
 pipeline{
     agent any
     tools{
-        maven "3.8.7"
+        maven "3.8.3"
         docker "20.10.22"
     }
     
