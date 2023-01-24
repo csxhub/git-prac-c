@@ -20,6 +20,7 @@ pipeline{
     agent any
     tools{
         maven "3.6.0"
+        docker "20.10.22"
     }
     
     stages{
@@ -27,7 +28,8 @@ pipeline{
             steps{
                 sh 'echo "gg"'
                 sh 'mvn -version'
-                sh 'mvn clean install'
+                //sh 'mvn clean install'
+              sh 'docker version'
             }
         }
     }
