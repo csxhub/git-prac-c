@@ -11,7 +11,7 @@ public class GitPracBApplication implements CommandLineRunner {
 
 
     public static void main(String[] args) {
-        log.info("CI/CD.....")
+        log.info("CI/CD.....");
         SpringApplication.run(GitPracBApplication.class, args);
     }
 
