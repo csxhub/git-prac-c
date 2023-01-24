@@ -1,3 +1,4 @@
+/*
 pipeline{
   agent {
     docker{
@@ -13,4 +14,26 @@ pipeline{
       }
     }
   }
+}
+*/
+pipeline{
+   // agent any
+    //tools{
+   //     maven "3.8.3"
+   // }
+    agent {
+     docker{
+       image "maven:3.6.0-jdk-13"
+       label "docker"
+     }
+    }
+    stages{
+        stage('stage 1'){
+            steps{
+                sh 'echo "gg"'
+                sh 'mvn -version'
+                sh 'mvn clean install'
+            }
+        }
+    }
 }
