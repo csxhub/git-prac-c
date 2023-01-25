@@ -20,7 +20,7 @@ pipeline{
     agent any
     tools{
         maven "3.8.3"
-        docker "20.10.22"
+       // docker "20.10.22"
     }
     
     stages{
