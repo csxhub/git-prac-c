@@ -38,7 +38,10 @@ pipeline{
 */
 
 pipeline {
-	agent none
+	agent any
+	 tools {
+      docker "myDocker"
+    }
   stages {
 	  /*
   	stage('Maven Install') {
@@ -51,11 +54,12 @@ pipeline {
       	sh 'mvn clean install'
       }
 		*/
-	
+	/*
 	stage('Initialize'){
         def dockerHome = tool 'myDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
 	}
+	*/
 	  stage('dd'){
 		  steps{
 			  
