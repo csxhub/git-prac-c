@@ -40,6 +40,7 @@ pipeline{
 pipeline {
 	agent none
   stages {
+	  /*
   	stage('Maven Install') {
     	agent {
       	docker {
@@ -49,7 +50,22 @@ pipeline {
       steps {
       	sh 'mvn clean install'
       }
-    }
+		*/
+	
+	stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+	}
+	  stage('dd'){
+		  steps{
+			  
+			sh 'docker version'
+			  sh 'docker info'
+		  }
+		  
+	  }
+
+
   }
 }
 
