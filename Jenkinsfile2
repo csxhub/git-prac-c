@@ -1,5 +1,8 @@
 pipeline {
 	agent none
+	environment {
+            PATH = "$PATH:C:/Program Files/Docker/Docker/resources/bin"
+    	}
   stages {
   /*
   	stage('Maven Install') {
@@ -13,9 +16,7 @@ pipeline {
       }
     }
     */
-    environment {
-        PATH = "$PATH:C:/Program Files/Docker/Docker/resources/bin"
-    }
+    
     	
     
     stage('Docker Build') {
